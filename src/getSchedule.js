@@ -20,7 +20,7 @@ function getSchedule(scheduleTarget) {
   return species.find((animal) => animal.name === scheduleTarget).availability;
 }
 
-// console.log(getSchedule('penguins'));
+console.log(getSchedule('penguins'));
 // console.log(getSchedule('Friday'));
 console.log(getSchedule());
 
