@@ -23,16 +23,12 @@ describe('Testes da função getOpeningHours', () => {
     expect(getOpeningHours('MONDAY', '12:00-Am')).toEqual(closed);
   });
   it('Retorna um erro correspodente se passado a abreviação da hora errada', () => {
-    const chamada = getOpeningHours('Tuesday', '10:30-a2');
-    const mensagem = 'The abbreviation must be \'AM\' or \'PM\'';
-    expect(() => chamada).toTrow(mensagem);
+    expect(() => getOpeningHours('Tuesday', '10:30-a2')).toTrow(Error);
   });
   it('Retorna um erro correspodente se passado a hora errada', () => {
-    const chamada2 = getOpeningHours('Tuesday', '10:s0-am');
-    expect(() => chamada2).toTrow(Error);
+    expect(() => getOpeningHours('Tuesday', '10:s0-am')).toTrow(Error);
   });
   it('Retorna um erro correspodente se passado o dia errado', () => {
-    const chamada3 = getOpeningHours('segunda-feira', '10:30-am');
-    expect(() => chamada3).toTrow(Error);
+    expect(() => getOpeningHours('segunda-feira', '10:30-am')).toTrow(Error);
   });
 });
