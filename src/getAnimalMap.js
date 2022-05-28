@@ -19,15 +19,6 @@ const includesName = () => locations.reduce((acc, crr) => {
   return acc;
 }, {});
 
-// const namesSorted = () => locations.reduce((acc, crr) => {
-//   const animalSort = animals(crr).reduce((obj, current) => {
-//     obj[current] = names(current).sort();
-//     return obj;
-//   }, {});
-//   acc[crr] = animalSort;
-//   return acc;
-// }, {});
-
 const animalMap = () => locations.reduce((acc, crr) => {
   const arrAnimals = animals(crr);
   acc[crr] = arrAnimals;
@@ -42,7 +33,7 @@ function getAnimalMap(options) {
     return includesName();
   }
   if (options.sorted) {
-    return namesSorted();
+    return 'namesSorted()';
   }
   if (options.sex) {
     return 'animalMap() com nomes dos machos ou femeas';
