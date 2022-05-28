@@ -3,6 +3,7 @@ const data = require('../data/zoo_data');
 const { species } = data;
 const locations = ['NE', 'NW', 'SE', 'SW'];
 
+
 const names = (animal) => species.find((element) => element.name === animal).residents
   .map((name) => name.name);
 
@@ -21,7 +22,6 @@ const includesName = () => locations.reduce((acc, crr) => {
 
 const namesSorted = () => locations.reduce((acc, crr) => {
   const animalSort = animals(crr).reduce((obj, current) => {
-    // eslint-disable-next-line no-param-reassign
     obj[current] = names(current).sort();
     return obj;
   }, {});
@@ -50,7 +50,7 @@ function getAnimalMap(options) {
   }
 }
 
-// console.log(getAnimalMap({ includeNames: true }));
+console.log(getAnimalMap({ includeNames: true }));
 // console.log(getAnimalMap({ sex: 'female' }));
 // console.log(getAnimalMap({ sex: 'female', sorted: true }));
 // console.log(getAnimalMap({ sorted: true }));
