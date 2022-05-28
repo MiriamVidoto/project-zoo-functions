@@ -3,7 +3,6 @@ const data = require('../data/zoo_data');
 const { species } = data;
 const locations = ['NE', 'NW', 'SE', 'SW'];
 
-
 const names = (animal) => species.find((element) => element.name === animal).residents
   .map((name) => name.name);
 
@@ -20,14 +19,14 @@ const includesName = () => locations.reduce((acc, crr) => {
   return acc;
 }, {});
 
-const namesSorted = () => locations.reduce((acc, crr) => {
-  const animalSort = animals(crr).reduce((obj, current) => {
-    obj[current] = names(current).sort();
-    return obj;
-  }, {});
-  acc[crr] = animalSort;
-  return acc;
-}, {});
+// const namesSorted = () => locations.reduce((acc, crr) => {
+//   const animalSort = animals(crr).reduce((obj, current) => {
+//     obj[current] = names(current).sort();
+//     return obj;
+//   }, {});
+//   acc[crr] = animalSort;
+//   return acc;
+// }, {});
 
 const animalMap = () => locations.reduce((acc, crr) => {
   const arrAnimals = animals(crr);
